@@ -1,0 +1,36 @@
+<h4>Listado</h4>
+
+<!-- i = index, el index es palabra reservada, isFirst = first, es reservada, e igual "last", "even"-->
+
+<ul class="list-group">
+  <li *ngFor="
+    let character of characterList;
+    let i = index;
+    let isFirst = first;
+    let isLast = last;
+    let isEven = even;
+    let isOdd = odd;"
+    class="list-group-item d-flex justify-content-between align-items-center"
+    [ngClass]="{
+
+      'list-group-item-dark': isLast,
+      'list-group-item-primary': isEven,
+
+    }">
+
+    <!-- Class es para poderle dar una clase a un elemento html dentro de un *ngfor -->
+
+    <div>
+      <span class="text-primary">{{ i+1 }}. </span>
+      <span>{{ character.name }} - </span>
+      <strong>Power: </strong>
+      <span>{{ character.power }}</span>
+
+    </div>
+
+
+    <button class="btn btn-danger" (click)="onDeleteCharacter(character.id)">x</button>
+
+
+  </li>
+</ul>

@@ -1,0 +1,19 @@
+<h4>Agregar personaje</h4>
+
+<!-- Ngsubmit es el método que usaremos para enviar todo los valores del formulario a nuestra lógica -->
+
+<form class="row" (ngSubmit)="emitCharacter()">
+
+
+  <!-- Two Data Binding, se mandan y etraen datos -->
+  <!-- Para usar el NgModel se necesita usar el atributo name -->
+  <input type="text" [(ngModel)]="character.name" name="name" class="form-control mb-2" placeholder="Nombre">
+  <input type="number" [(ngModel)]="character.power" name="power" class="form-control mb-2" placeholder="Poder">
+
+  <button type="submit" class="btn btn-primary">Agregar</button>
+
+
+  <!-- <pre>{{ character | json }}</pre> -->
+
+
+</form>

@@ -1,0 +1,21 @@
+<h1>DBZ Main Page</h1>
+<hr>
+
+<div class="row">
+
+
+  <div class="col">
+
+    <!-- Aqui se pasa la informacion al hijo, primero se define el nombre del que va a recibir, y luego lo que se le pasa -->
+    <dbz-list [characterList]="characters" (onDelete)="onDeleteChracter($event)"></dbz-list>
+
+  </div>
+
+
+  <div class="col">
+
+    <!-- $event es para recibir el evento desde el hijo -->
+    <dbz-add-character (onNewCharacter)="onNewCharacter($event)"></dbz-add-character>
+
+  </div>
+</div>
